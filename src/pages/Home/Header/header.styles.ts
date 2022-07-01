@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 
 const Container = styled.div`
-    background-color: ${({theme}) => theme.theme.bg};
-
+    width: 100%;
+    background-color: ${({theme}) => theme.theme.shape};
 `
 
 export const Sty = {
