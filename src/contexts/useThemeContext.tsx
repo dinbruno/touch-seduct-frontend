@@ -3,8 +3,8 @@ import {
   DefaultTheme as DefaultThemeType,
   ThemeProvider,
 } from "styled-components";
+import { dark, light } from "../ui/themes";
 import { GlobalStyle } from "../ui/themes/Global";
-// import { dark, light } from "../ui/styles/themes";
 
 type ContextType = {
   changeToDark: () => void;
