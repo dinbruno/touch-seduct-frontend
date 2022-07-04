@@ -3,11 +3,13 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
 
 * {     
-    background-color: ${({ theme }) => theme.theme.bg};
     font-size: 16px;
-
+    font-family: 'Poppins', sans-serif;
      margin: 0;
-     padding: 0
+     padding: 0;
+     color: ${({ theme }) => theme.theme.font};
+    
+    
 
   
      
@@ -16,5 +18,7 @@ export const GlobalStyle = createGlobalStyle`
     html,
     body {
       overflow-x: hidden;
+      background: ${({ theme }) => theme.theme.shape};
+    
     }
 `;
