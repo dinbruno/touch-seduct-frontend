@@ -4,7 +4,7 @@ const ContainerAll = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 `;
 
 const Content = styled.div`
@@ -42,7 +42,7 @@ const Card = styled.div`
   position: relative;
   width: 300px;
   height: 400px;
-  margin: 20px 40px;
+  margin: 10px 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,12 +52,24 @@ const Card = styled.div`
   flex-direction: column;
 
   :hover {
-     
+    transform: translateY(20px);
+    transition: 0.6s ease-in-out;
+
+    .cardcontent {
       visibility: visible;
       opacity: 1;
       transition: 0.6s ease-in-out;
-      transform: translateY(20px);
-    
+    }
+
+    .imgbx {
+      transform: translateY(-130px);
+
+      .keen-slider #slider {
+        > img {
+          transform: translate(20px, 0px) rotate(-35deg) scale(1.5);
+        }
+      }
+    }
   }
 `;
 
@@ -68,10 +80,15 @@ const CardContents = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transition: 0, 5 ease-in-out;
+  transition: 0.1 ease-in-out;
   opacity: 0;
   visibility: hidden;
-
+  height: 150px;
+  width: 360px;
+  background-color: ${({ theme }) => theme.colors.primary};
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(55px);
+  border-radius: 15px;
 
   .sizes {
     display: flex;
@@ -149,20 +166,18 @@ const ImgBx = styled.div`
     font-weight: 600;
   }
 
-  :hover {
-    transform: translateY(-100px);
-
-    > img {
-      transform: translate(10px, -60px) rotate(-25deg) scale(1.4);
+  .keen-slider {
+    > #slider {
+      display: flex;
+      justify-content: center;
+      > img {
+        background-color: transparent;
+        max-width: 200px;
+        max-height: 200px;
+        margin: 0 0 50px;
+        transition: 0.5s ease-in-out;
+      }
     }
-  }
-
-  > img {
-    background-color: transparent;
-    max-width: 200px;
-    max-height: 200px;
-    margin: 0 0 20px;
-    transition: 0.5s ease-in-out;
   }
 `;
 
@@ -180,6 +195,10 @@ const Button = styled.button`
   text-transform: uppercase;
 `;
 
+const Arrows = styled.div`
+  position: absolute;
+`;
+
 export const Sty = {
   ContainerAll,
   SectionMock,
@@ -189,4 +208,5 @@ export const Sty = {
   Content,
   CardContents,
   Button,
+  Arrows,
 };
