@@ -1,6 +1,6 @@
 import ReactSwitch from "react-switch";
 import { useTheme } from "../../hooks/useTheme";
-import { FiMoon, FiSun, FiSunset } from "react-icons/fi";
+import { FiMoon, FiSun } from "react-icons/fi";
 
 
 export const ThemeSwitcher: React.FC = () => {
@@ -18,10 +18,10 @@ export const ThemeSwitcher: React.FC = () => {
       height={16}
       width={44}
       checkedIcon={
-        <FiSun size={12} color="#F3A84F" style={{ marginLeft: "2px" }} />
+        <FiSun size={12} color="#F3A84F" style={{ marginLeft: "2px",  marginBottom: "4px"}} />
       }
       uncheckedIcon={
-        <FiMoon size={12} color="#3A3C4B" style={{ marginLeft: "10px" }} />
+        <FiMoon size={12} color="#3A3C4B" style={{ marginLeft: "10px", marginBottom: "4px"}} />
       }
     />
   );
