@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 const ContainerAll = styled.div`
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 `;
 
 const Content = styled.div`
@@ -132,7 +133,7 @@ const CardContents = styled.div`
     > h2 {
       > span {
         width: 50px;
-        height: 20px;
+        height: 50px;
         background-color: red;
         margin: 0 5px;
         border: 2px solid white;

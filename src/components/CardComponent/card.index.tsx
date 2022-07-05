@@ -61,9 +61,9 @@ export const CardComponent: React.FC = () => {
                   <div className="colors">
                     <h2>
                       Cores:
-                      <span></span>
-                      <span></span>
-                      <span></span>
+                      <span>a</span>
+                      <span>b</span>
+                      <span>c</span>
                     </h2>
                   </div>
                   <Sty.Button></Sty.Button>

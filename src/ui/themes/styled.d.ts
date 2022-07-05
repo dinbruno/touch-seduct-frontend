@@ -11,7 +11,7 @@ declare module "styled-components" {
     theme: {
       paragraph: string;
       font: string;
-
+      neonShader: string;
       bg: string;
       shape: string;
     };
