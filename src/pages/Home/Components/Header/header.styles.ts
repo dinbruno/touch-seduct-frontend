@@ -6,7 +6,7 @@ import ImagePng4 from "../../../../assets/png/sexyshop.jpg";
 
 const Container = styled.div`
   width: 100%;
-  height: 700px;
+  height: 900px;
   background-color: ${({ theme }) => theme.theme.shape};
   background-image: url(${ImagePng4});
   background-size: cover;
@@ -36,7 +36,7 @@ const Contents = styled.div`
   width: 90%;
   height: 100px;
   margin: 0 auto;
-  background-color: rgba(198, 103, 229, 0.35);
+  background-color: rgba(198, 103, 229, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
@@ -47,6 +47,10 @@ const Contents = styled.div`
   padding-right: 60px;
   align-items: center;
   display: flex;
+
+  @media (max-width: 650px) {
+    justify-content: none;
+  }
 `;
 
 const Ul = styled.ul`
@@ -60,6 +64,12 @@ const Ul = styled.ul`
 
   li:nth-child(4) {
     width: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 1200px) {
+    display: none;
   }
 `;
 
@@ -67,7 +77,18 @@ const Division = styled.div`
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
-  left: 50%;
+  left: 20%;
+  width: 100%;
+
+  @media (max-width: 1400px) {
+    left: 24%;
+  }
+  @media (max-width: 1200px) {
+    left: 50%;
+  }
+  @media (max-width: 768px) {
+    left: 40%;
+  }
 `;
 
 const Animation = keyframes`
@@ -102,7 +123,61 @@ const Title = styled.h1`
   line-height: 2rem;
   outline: none;
   animation: ${Animation} 10s linear infinite;
+  width: 100%;
 
+  @media (max-width: 1200px) {
+    font-size: 3rem;
+    width: 100%;
+  }
+
+  @media (max-width: 650px) {
+    font-size: 2.5rem;
+  }
+  @media (max-width: 560px) {
+    font-size: 2rem;
+  }
+  @media (max-width: 460px) {
+    font-size: 1.7rem;
+    -webkit-box-reflect: below -10px linear-gradient(transparent, #f1b);
+  }
+  @media (max-width: 340px) {
+    font-size: 1.5rem;
+    -webkit-box-reflect: below -10px linear-gradient(transparent, #f1b);
+  }
+`;
+
+const Menu = styled.div`
+  display: flex;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+
+  @media (min-width: 1200px) {
+    display: none;
+  }
+  @media (max-width: 500px) {
+    margin-right: -30px;
+  }
+`;
+
+const MenuContent = styled.div`
+  width: 500px;
+  background-color: red;
+  height: 100%;
+  z-index: 20;
+  position: absolute;
+  right: 0;
+  background: rgba(194, 0, 255, 0.55);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 1.3s ease-in-out;
+
+
+  @media (max-width: 650px) {
+    width: 100%;
+  }
 `;
 
 export const Sty = {
@@ -111,4 +186,6 @@ export const Sty = {
   Ul,
   Division,
   Title,
+  Menu,
+  MenuContent,
 };

@@ -2,13 +2,17 @@ import { ThemeSwitcher } from "../../../../utils/ThemeSwitcher";
 import { Sty } from "./header.styles";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import ImagePng from "../../../../assets/png/1-1920px.png";
-import ImagePng2 from "../../../../assets/png/2-1920px.png";
-import ImagePng3 from "../../../../assets/png/3-1920px.png";
-import ImagePng4 from "../../../../assets/png/4-1920px.png";
+// import ImagePng from "../../../../assets/png/1-1920px.png";
+// import ImagePng2 from "../../../../assets/png/2-1920px.png";
+// import ImagePng3 from "../../../../assets/png/3-1920px.png";
+// import ImagePng4 from "../../../../assets/png/4-1920px.png";
 import { NeonButton } from "../../../../components/NeonButton/neonbutton";
+import { Spin as Hamburger } from "hamburger-react";
+import { useState } from "react";
 
 export const Header: React.FC = () => {
+  const [isOpen, setOpen] = useState(false);
+
   const [sliderRef] = useKeenSlider<HTMLDivElement>(
     {
       loop: true,
@@ -55,9 +59,7 @@ export const Header: React.FC = () => {
       </div> */}
       <Sty.Contents>
         <Sty.Division>
-          <Sty.Title>
-            TOUCH SEDUCTION
-          </Sty.Title>
+          <Sty.Title>TOUCH SEDUCTION</Sty.Title>
         </Sty.Division>
         <Sty.Ul>
           <li>
@@ -75,7 +77,29 @@ export const Header: React.FC = () => {
             <ThemeSwitcher />
           </li>
         </Sty.Ul>
+        <Sty.Menu>
+          <Hamburger
+            toggled={isOpen}
+            toggle={setOpen}
+            color="#FB45D8"
+            label="Show menu"
+            easing="ease-in"
+            size={24}
+          />
+        </Sty.Menu>
       </Sty.Contents>
+      {isOpen && (
+        <Sty.MenuContent>
+          <Hamburger
+            toggled={isOpen}
+            toggle={setOpen}
+            color="#FB45D8"
+            label="Show menu"
+            easing="ease-in"
+            size={24}
+          />
+        </Sty.MenuContent>
+      )}
     </Sty.Container>
   );
 };
