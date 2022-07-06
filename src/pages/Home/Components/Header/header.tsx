@@ -2,10 +2,10 @@ import { ThemeSwitcher } from "../../../../utils/ThemeSwitcher";
 import { Sty } from "./header.styles";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-// import ImagePng from "../../../../assets/png/1-1920px.png";
-// import ImagePng2 from "../../../../assets/png/2-1920px.png";
-// import ImagePng3 from "../../../../assets/png/3-1920px.png";
-// import ImagePng4 from "../../../../assets/png/4-1920px.png";
+import bdsm from "../../../../assets/png/bdsm.png";
+import toys from "../../../../assets/png/toys.png";
+import lingerie from "../../../../assets/png/lingerie.png";
+import apiment from "../../../../assets/png/apime.png";
 import { NeonButton } from "../../../../components/NeonButton/neonbutton";
 import { Spin as Hamburger } from "hamburger-react";
 import { useState } from "react";
@@ -16,7 +16,11 @@ export const Header: React.FC = () => {
   const [sliderRef] = useKeenSlider<HTMLDivElement>(
     {
       loop: true,
-      drag: false,
+      drag: true,
+      slides: {
+        perView: 1,
+        spacing: 1,
+      },
     },
     [
       (slider) => {
@@ -30,7 +34,7 @@ export const Header: React.FC = () => {
           if (mouseOver) return;
           timeout = setTimeout(() => {
             slider.next();
-          }, 100);
+          }, 4000);
         }
         slider.on("created", () => {
           slider.container.addEventListener("mouseover", () => {
@@ -52,11 +56,30 @@ export const Header: React.FC = () => {
 
   return (
     <Sty.Container>
-      {/* <div ref={sliderRef} className="keen-slider">
-        <div className="keen-slider__slide number-slide1" id="slide1"></div>
-        <div className="keen-slider__slide number-slide2" id="slide2"></div>
-        <div className="keen-slider__slide number-slide3" id="slide3"></div>
-      </div> */}
+      <Sty.Carousel>
+        <Sty.SlidersContainer>
+          <div ref={sliderRef} className="keen-slider">
+            <div className="keen-slider__slide number-slide1" id="slide1">
+              <span> Apimente sua relação </span>
+              <img src={apiment} alt="apiment"></img>
+            </div>
+            <div className="keen-slider__slide number-slide2" id="slide2">
+              <span>Conheça nossas Lingeries</span>
+              <img src={lingerie} alt="lingerie"></img>
+            </div>
+            <div className="keen-slider__slide number-slide3" id="slide3">
+              <span>Que tal alguns brinquedinhos?</span>
+              <img src={toys} alt="toys"></img>
+            </div>
+            <div className="keen-slider__slide number-slide4" id="slide4">
+              <span>Você é um dominador(a) ou um submisso(a)</span>
+              <img src={bdsm} alt="bdsm"></img>
+            </div>
+          </div>
+        </Sty.SlidersContainer>
+      </Sty.Carousel>
+
+    
       <Sty.Contents>
         <Sty.Division>
           <Sty.Title>TOUCH SEDUCTION</Sty.Title>

@@ -1,11 +1,15 @@
 import Icon from "../../hooks/useIconGetter";
 import { Container } from "./styles";
 
-export const AnimatedIcon: React.FC = () => {
+interface AnimatedIconProps {
+  icon: string;
+}
+
+export const AnimatedIcon = ({icon}: AnimatedIconProps) => {
   return (
     <Container>
       <div>
-        <Icon icon="instagram" svgProps={{fill:" #A14581"}} />
+        <Icon icon={icon} svgProps={{fill:" #A14581"}} />
       </div>
     </Container>
   );

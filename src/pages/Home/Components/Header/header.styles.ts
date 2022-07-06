@@ -1,7 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import ImagePng from "../../../../assets/png/1-1920px.png";
-import ImagePng2 from "../../../../assets/png/2-1920px.png";
-import ImagePng3 from "../../../../assets/png/3-1920px.png";
 import ImagePng4 from "../../../../assets/png/sexyshop.jpg";
 
 const Container = styled.div`
@@ -10,21 +7,7 @@ const Container = styled.div`
   background-color: ${({ theme }) => theme.theme.shape};
   background-image: url(${ImagePng4});
   background-size: cover;
-  /* .keen-slider {
-    height: 600px;
-    z-index: 1;
-    position: relative;
-  }
-  #slide1 {
-    position: relative;
-    background-image: url(${ImagePng2});
-  }
-  #slide2 {
-    background-image: url(${ImagePng3});
-  }
-  #slide3 {
-    background-image: url(${ImagePng4});
-  } */
+
 `;
 const Contents = styled.div`
   z-index: 10;
@@ -180,6 +163,32 @@ const MenuContent = styled.div`
   }
 `;
 
+const Carousel = styled.div`
+  width: 100%;
+  position: absolute;
+  top: 30%;
+  left: 70%;
+
+
+`;
+const SlidersContainer = styled.div`
+  width: 430px;
+
+  .keen-slider {
+    > div {
+      > span {
+        font-size: 25px;
+        text-align: center;
+      }
+
+      > img {
+        border-radius: 15px;
+        border: 3px solid ${({ theme }) => theme.colors.secondary};
+      }
+    }
+  }
+`;
+
 export const Sty = {
   Container,
   Contents,
@@ -188,4 +197,6 @@ export const Sty = {
   Title,
   Menu,
   MenuContent,
+  Carousel,
+  SlidersContainer
 };
