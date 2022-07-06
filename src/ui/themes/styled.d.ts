@@ -14,6 +14,7 @@ declare module "styled-components" {
       neonShader: string;
       bg: string;
       shape: string;
+      faq: string;
     };
 
     fonts?: {

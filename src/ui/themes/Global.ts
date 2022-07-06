@@ -8,11 +8,8 @@ export const GlobalStyle = createGlobalStyle`
      margin: 0;
      padding: 0;
      color: ${({ theme }) => theme.theme.font};
+     scroll-behavior: smooth;
     
-    
-
-  
-     
     }
     
     html,

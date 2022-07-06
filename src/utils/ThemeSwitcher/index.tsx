@@ -18,10 +18,10 @@ export const ThemeSwitcher: React.FC = () => {
       height={16}
       width={44}
       checkedIcon={
-        <FiSun size={15} color="#ffffff" style={{ marginLeft: "2px",  marginBottom: "0px"}} />
+        <FiSun size={12} color="#ffffff" style={{ marginLeft: "2px",  marginBottom: "3px"}} />
       }
       uncheckedIcon={
-        <FiMoon size={12} color="#ffffff" style={{ marginLeft: "10px", marginBottom: "0px"}} />
+        <FiMoon size={12} color="#ffffff" style={{ marginLeft: "10px", marginBottom: "3px"}} />
       }
     />
   );
