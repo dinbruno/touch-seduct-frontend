@@ -64,7 +64,7 @@ export const Faq: React.FC = () => {
             <img src={CellPhone} alt="cellphone" />
           </a>
           <div>
-            <h1>Fique de olho nas nossas novidades</h1>
+            <h1>Fique de olho em todas as nossas novidades</h1>
             <h2>Nos siga no Instagram.</h2>
             <div className="icon">
               <a
