@@ -66,7 +66,7 @@ export const CardComponent: React.FC = () => {
                       <span>c</span>
                     </h2>
                   </div>
-                  <Sty.Button></Sty.Button>
+            
                 </Sty.CardContents>
               </Sty.Card>
             </Sty.SectionMock>
